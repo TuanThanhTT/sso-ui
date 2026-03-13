@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.cube {
+  position: absolute;
+  bottom: -100px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  animation: floatCube 20s infinite linear;
+}
+
+.cube1 {
+  left: 10%;
+  animation-duration: 18s;
+}
+
+.cube2 {
+  left: 30%;
+  width: 120px;
+  height: 120px;
+  animation-duration: 25s;
+}
+
+.cube3 {
+  left: 50%;
+  animation-duration: 20s;
+}
+
+.cube4 {
+  left: 70%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 22s;
+}
+
+.cube5 {
+  left: 85%;
+  width: 100px;
+  height: 100px;
+  animation-duration: 28s;
+}
+
+@keyframes floatCube {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}

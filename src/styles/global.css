@@ -1,0 +1,110 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+:root {
+  --background: #f9fafb;
+  --card: #fff;
+  --text: #1e293b;
+  --primary: #2563eb;
+  --secondary: #6366f1;
+  --border: #e5e7eb;
+  --accent: #38bdf8;
+  --glass: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] {
+  --background: #18181b;
+  --card: #23272f;
+  --text: #f1f5f9;
+  --primary: #60a5fa;
+  --secondary: #a5b4fc;
+  --border: #334155;
+  --accent: #0ea5e9;
+  --glass: rgba(36, 36, 36, 0.8);
+  --glass-border: rgba(36, 36, 36, 0.3);
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+}
+
+.hero-text-shadow {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.magazine-card:hover .magazine-image {
+  transform: scale(1.08);
+}
+
+.magazine-card:hover .magazine-title {
+  color: #2563eb;
+  /* blue-600 */
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.editorial-title {
+  line-height: 1.2;
+  /* Tăng khoảng cách dòng vừa đủ cho dấu tiếng Việt */
+  padding-bottom: 0.1em;
+  /* Tạo không gian cho dấu nặng */
+}
+
+.marquee-container {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Sửa các class màu chính sang dùng biến theme */
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary {
+  background: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.bg-secondary {
+  background: var(--secondary);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}

@@ -1,0 +1,47 @@
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fb;
+}
+
+.login-box {
+
+  width: 320px;
+  padding: 32px;
+
+  background: white;
+
+  border-radius: 10px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-box input {
+
+  padding: 10px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 6px;
+}
+
+.login-box button {
+
+  padding: 10px;
+
+  border: none;
+
+  background: #1976d2;
+
+  color: white;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
