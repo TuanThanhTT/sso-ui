@@ -6,10 +6,9 @@ RUN npm install --frozen-lockfile
 COPY . .
 RUN npm run build
 
-# Stage 2: Serve with nginx
-FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
-COPY --from=build /app/dist .
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Stage 2: Serve with Node
+FROM node:20-alpine
+WORKDIR /app
+COPY --from=build /app .
+EXPOSE 3000
+CMD ["npm", "run", "preview"]
