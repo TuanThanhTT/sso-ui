@@ -1,10 +1,8 @@
 version: '3.8'
+
 services:
   sso-ui:
     build: .
     ports:
       - "3000:3000"
     restart: unless-stopped
-    environment:
-      - NODE_ENV=production
-    depends_on: []
